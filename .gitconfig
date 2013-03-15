@@ -39,6 +39,7 @@
   ss = stash save
 [core]
   editor = mvim -f
+  pager = less -FRSX
 [user]
   name = Bartłomiej Danek
   email = bartek.danek@gmail.com
@@ -49,7 +50,12 @@
   branch = auto
   interactive = auto
 [merge]
-  tool = mvim
+  tool = mvimdiff
 [mergetool "mvim"]
-  cmd=mvim -d -g $LOCAL $MERGED $REMOTE
+  cmd = mvim -d -g $LOCAL $MERGED $REMOTE
+  keepBackup = false
+[mergetool "mvimdiff"]
+  cmd = mvimdiff -d -g $LOCAL $MERGED $REMOTE
+  keepBackup = false
+[mergetool]
   keepBackup = false

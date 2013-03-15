@@ -72,6 +72,8 @@ alias t='tail -f'
 alias gr='grep'
 alias ldev='t ./log/development.log'
 alias ltest='t ./log/test'
+alias rs='bundle exec rails s'
+alias rc='bundle exec rails c'
 
 if [[ `uname` =~ "Darwin" ]] ; then
   alias gvim='mvim -p'
@@ -110,12 +112,15 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
+# Nocorrect section
+alias lg=’nocorrect lg’
+
 # PATH config
 PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Bindkey
 bindkey "[C" emacs-forward-word
 bindkey "[D" backward-word
-
+export RUBYOPT=W0Ku
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
