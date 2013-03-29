@@ -59,3 +59,7 @@
   keepBackup = false
 [mergetool]
   keepBackup = false
+[pull]
+  rebase = true
+[push]
+  default = simple
